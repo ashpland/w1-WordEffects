@@ -46,9 +46,12 @@ int main(int argc, const char * argv[]) {
                     break;
                 }
                     
-                case 2:
-                    NSLog(@"You chose Lowercase!");
+                // Lowercase
+                case 2:{
+                    NSString *theOutput = tidyInput.lowercaseString;
+                    NSLog(@"%@", theOutput);
                     break;
+                }
                     
                 case 3:
                     NSLog(@"You chose Numberize!");
