@@ -11,24 +11,36 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-        // 255 unit long array of characters
-        char inputChars[255];
+        BOOL doContinue = true;
         
-        // ask for input
-        printf("Input a string: ");
+        while (doContinue == true) {
         
-        //limit input to max 255 characters
-        fgets(inputChars, 255, stdin);
-        
-        //print as a c string
-        printf("Your string is %s\n", inputChars);
-        
-        // convert char array to an NSString object
-        NSString *inputString = [NSString stringWithUTF8String:inputChars];
-        
-        //print NSString object
-        NSLog(@"Input was: %@", inputString);
-    
+            
+            // 255 unit long array of characters
+            char inputChars[255];
+            
+            // ask for input
+            printf("Input a string: ");
+            
+            //limit input to max 255 characters
+            fgets(inputChars, 255, stdin);
+            
+            //print as a c string
+            printf("Your string is %s\n", inputChars);
+            
+            // convert char array to an NSString object
+            NSString *inputString = [NSString stringWithUTF8String:inputChars];
+            
+            //print NSString object
+            NSLog(@"Input was: %@", inputString);
+            
+            printf("Continue? y/n: ");
+            fgets(inputChars, 255, stdin);
+
+            if (strncmp("n", inputChars, 1) == 0) {
+                doContinue = false;
+            }
+        }
     }
     return 0;
 }
