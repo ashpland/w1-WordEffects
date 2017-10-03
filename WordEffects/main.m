@@ -38,9 +38,13 @@ int main(int argc, const char * argv[]) {
             NSInteger opChoice = [operationNumber intValue];
 
             switch (opChoice) {
-                case 1:
-                    NSLog(@"You chose Uppercase!");
+               
+                // Uppercase
+                case 1:{
+                    NSString *theOutput = tidyInput.uppercaseString;
+                    NSLog(@"%@", theOutput);
                     break;
+                }
                     
                 case 2:
                     NSLog(@"You chose Lowercase!");
