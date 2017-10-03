@@ -96,10 +96,15 @@ int main(int argc, const char * argv[]) {
                     
                     break;
                 }
+                 
+                // De-Space-It
+                case 6:{
+                    NSString *theOutput = [tidyInput stringByReplacingOccurrencesOfString:@" " withString:@"-"];
+                    NSLog(@"%@", theOutput);
+
                     
-                case 6:
-                    NSLog(@"You chose De-Space-It!");
                     break;
+                }
                     
                 default:
                     NSLog(@"That's not a valid choice :(");
