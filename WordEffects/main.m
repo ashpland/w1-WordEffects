@@ -35,11 +35,28 @@ int main(int argc, const char * argv[]) {
             printf("Choose an operation\n1) Canadianize\n2) Uppercase\nOperation: ");
             fgets(inputChars, 255, stdin);
             NSString *operationNumber = [NSString stringWithUTF8String:inputChars];
-            NSString *tidyOpNum = [operationNumber substringToIndex:(operationNumber.length-1)];
+            NSInteger opChoice = [operationNumber intValue];
 
+            switch (opChoice) {
+                case 1:
+                    NSLog(@"You chose 1!");
+                    break;
+                    
+                case 2:
+                    NSLog(@"You chose 2!");
+                    break;
+                    
+                default:
+                    NSLog(@"That's not a valid choice :(");
+                    break;
+            }
+            
+            
+            
+            
             
             //print NSString object
-            NSLog(@"Operation was: %@. String was: %@.", tidyOpNum, tidyInput);
+            NSLog(@"Operation was: %ld. String was: %@.", (long)opChoice, tidyInput);
             
             printf("Continue? y/n: ");
             fgets(inputChars, 255, stdin);
