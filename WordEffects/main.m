@@ -60,7 +60,7 @@ int main(int argc, const char * argv[]) {
                         NSNumber *theOutput = @0;
                         NSLog(@"%@", theOutput);
                     }
-                    // Output integerValue if it's not 0
+                    // Output integerValue if it's valid
                     else if ([tidyInput integerValue] != 0){
                         NSNumber *theOutput = [NSNumber numberWithInteger: [tidyInput integerValue]];
                         NSLog(@"%@", theOutput);
@@ -80,9 +80,22 @@ int main(int argc, const char * argv[]) {
                     NSLog(@"%@", theOutput);
                     break;
                 }
-                case 5:
-                    NSLog(@"You chose Respond!");
+                
+                // Respond
+                case 5:{
+                    NSString *punctuation = [tidyInput substringFromIndex:(tidyInput.length-1)];
+                    if ([punctuation isEqualToString:@"!"]) {
+                        NSLog(@"Whoa, calm down!");
+                    }
+                    else if ([punctuation isEqualToString:@"?"]) {
+                        NSLog(@"I don't know");
+                    }
+                    else {
+                        NSLog(@"I can't respond to that.");
+                    }
+                    
                     break;
+                }
                     
                 case 6:
                     NSLog(@"You chose De-Space-It!");
