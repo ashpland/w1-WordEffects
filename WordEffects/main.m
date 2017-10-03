@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
@@ -19,20 +21,23 @@ int main(int argc, const char * argv[]) {
             // 255 unit long array of characters
             char inputChars[255];
             
-            // ask for input
+            // ask for string
             printf("Input a string: ");
             
             //limit input to max 255 characters
             fgets(inputChars, 255, stdin);
             
-            //print as a c string
-            printf("Your string is %s\n", inputChars);
-            
             // convert char array to an NSString object
             NSString *inputString = [NSString stringWithUTF8String:inputChars];
             
+            // ask for operation
+            printf("Choose an operation\n1) Canadianize\n2) Uppercase\nOperation: ");
+            fgets(inputChars, 255, stdin);
+            NSString *operationNumber = [NSString stringWithUTF8String:inputChars];
+
+            
             //print NSString object
-            NSLog(@"Input was: %@", inputString);
+            NSLog(@"Operation was: %@. String was: %@.", operationNumber, inputString);
             
             printf("Continue? y/n: ");
             fgets(inputChars, 255, stdin);
