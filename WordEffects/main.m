@@ -52,10 +52,27 @@ int main(int argc, const char * argv[]) {
                     NSLog(@"%@", theOutput);
                     break;
                 }
+                
+                // Numberize
+                case 3:{
+                    // Deal with if the string is actually "0"
+                    if([tidyInput isEqualToString:@"0"]){
+                        NSNumber *theOutput = @0;
+                        NSLog(@"%@", theOutput);
+                    }
+                    // Output integerValue if it's not 0
+                    else if ([tidyInput integerValue] != 0){
+                        NSNumber *theOutput = [NSNumber numberWithInteger: [tidyInput integerValue]];
+                        NSLog(@"%@", theOutput);
+                    }
+                    // Express disappointment if they didn't actually input a number
+                    else{
+                        NSString *theOutput = @"That's not a number :(";
+                        NSLog(@"%@", theOutput);
+                    }
                     
-                case 3:
-                    NSLog(@"You chose Numberize!");
                     break;
+                }
                     
                 // Canadianize
                 case 4:{
