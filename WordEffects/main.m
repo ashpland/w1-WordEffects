@@ -50,10 +50,12 @@ int main(int argc, const char * argv[]) {
                     NSLog(@"You chose Numberize!");
                     break;
                     
-                case 4:
-                    NSLog(@"You chose Canadianize!");
+                // Canadianize
+                case 4:{
+                    NSString *theOutput = [tidyInput stringByAppendingString:@", eh?"];
+                    NSLog(@"%@", theOutput);
                     break;
-                    
+                }
                 case 5:
                     NSLog(@"You chose Respond!");
                     break;
