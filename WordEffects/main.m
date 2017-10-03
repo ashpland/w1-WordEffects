@@ -29,24 +29,17 @@ int main(int argc, const char * argv[]) {
             
             // convert char array to an NSString object
             NSString *inputString = [NSString stringWithUTF8String:inputChars];
-            
-            //NSLog(@"Length: %lu", (unsigned long)inputString.length);
-            
-            //NSString *tidyInput = [[NSString alloc] substringToIndex:(inputString.length-1)];
-            
-            
+            NSString *tidyInput = [inputString substringToIndex:(inputString.length-1)];
             
             // ask for operation
             printf("Choose an operation\n1) Canadianize\n2) Uppercase\nOperation: ");
             fgets(inputChars, 255, stdin);
             NSString *operationNumber = [NSString stringWithUTF8String:inputChars];
+            NSString *tidyOpNum = [operationNumber substringToIndex:(operationNumber.length-1)];
 
-            NSString *tidyOpNum = [operationNumber
-                                   substringToIndex:1];
-            
             
             //print NSString object
-            NSLog(@"Operation was: %@. String was: %@.", tidyOpNum, inputString);
+            NSLog(@"Operation was: %@. String was: %@.", tidyOpNum, tidyInput);
             
             printf("Continue? y/n: ");
             fgets(inputChars, 255, stdin);
